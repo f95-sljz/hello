@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'mvn install'
+        sh 'echo "mvn build"'
       }
     }
 
@@ -17,7 +17,7 @@ pipeline {
       parallel {
         stage('test') {
           steps {
-            sh 'mvn test'
+            sh 'echo "mvn test"'
           }
         }
 
@@ -32,7 +32,7 @@ pipeline {
 
     stage('deploy') {
       steps {
-        sh 'mvn package'
+        sh 'echo "mvn package"'
       }
     }
 
